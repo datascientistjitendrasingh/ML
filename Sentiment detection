@@ -1,0 +1,28 @@
+# CODE FOR SENTIMENT DETECTION:
+def detect_sentiment(text):
+    # Define simple keyword lists for positive, negative, and neutral sentiments
+    positive_keywords = ['happy', 'joyful', 'excited', 'glad', 'delighted']
+    negative_keywords = ['sad', 'unhappy', 'depressed', 'miserable', 'sorrowful']
+    neutral_keywords = ['okay', 'fine', 'alright', 'neutral']
+
+    # Normalize the text to lower case for comparison
+    text = text.lower()
+
+    # Check for sentiment keywords in the text
+    for word in positive_keywords:
+        if word in text:
+            return 'Happy'
+    for word in negative_keywords:
+        if word in text:
+            return 'Sad'
+    for word in neutral_keywords:
+        if word in text:
+            return 'Neutral'
+    
+    # If no keywords found, return neutral as the default sentiment
+    return 'Neutral'
+
+# Test the function
+text = input("Enter your text: ")
+sentiment = detect_sentiment(text)
+print(sentiment)
